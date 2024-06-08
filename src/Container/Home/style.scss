@@ -1,0 +1,76 @@
+.home
+{
+          position:relative;
+          height:100%;
+          display:flex;
+          justify-content:center;
+          align-content: center;
+          &_text_wrapper{
+                    display:flex;
+                    align-content: center;
+                    flex-direction: column;
+                    justify-content:center;
+                    h1{
+                              color:var(--yellow-theme-main-color);
+                              margin: 0px;
+                              font-weight:600;
+                              font-size: 4em;
+                              line-height: 1.3em;
+                              position: relative;
+                              bottom: 30px;
+                              overflow:hidden;
+                              white-space: nowrap;
+                              animation: typingEffectAnimation 2.9s steps(30,end);
+                    }
+                    
+          }
+          &_contactme{
+                    position: relative;
+                    left:-350%;
+                    margin-top: 320px;
+                    button{
+                              padding: 10px 20px;
+                              font-size: 1.4rem;
+                              background: transparent;
+                              color:var(--yellow-theme-main-color);
+                              border: 1px solid var(--yellow-theme-main-color);
+                              font-weight:500;         
+                    &:hover{
+                              background: var(--yellow-theme-main-color);
+                              color: #000000;
+                    }
+                    
+                    }
+          }
+}
+
+@media only screen and (max-width:550px)  {
+          .home_text_wrapper h1{
+                    font-size: 2rem;
+                    line-height: 3rem;
+                    margin-left: 80px;          
+          }
+}
+
+@media only screen and (max-width:551px) and (min-width: 768px)  {
+          .home_text_wrapper h1{
+                    font-size: 4rem;
+                    line-height: 5rem;                    
+          }
+}
+
+@media only screen and (max-width:769px) and (min-width:990px)  {
+          .home_text_wrapper h1{
+                    font-size: 6rem;
+                    line-height: 7rem;
+          }
+}
+
+@keyframes typingEffectAnimation {
+                    from{
+                              width: 0;
+                    }
+                    to{
+                              width: 100%;
+                    }
+}

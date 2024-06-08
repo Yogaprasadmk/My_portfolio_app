@@ -1,0 +1,79 @@
+.portfolio {
+  padding: 20px;
+
+  .portfolio__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .portfolio__content__filter {
+      list-style-type: none;
+      padding: 20px;
+      display: flex;
+      margin-bottom: 20px;
+
+      li {
+        margin-right: 10px;
+        cursor: pointer;
+        padding: 8px 16px;
+        border-radius: 20px;
+        background-color: #f0f0f0;
+        transition: background-color 0.3s;
+        font-size: 14px;
+        font-weight: bold;
+
+        &.active {
+          background-color: #ddd;
+        }
+
+        &:hover {
+          background-color: var(--yellow-theme-main-color);
+        }
+      }
+    }
+    
+    .portfolio__content__cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+
+      .portfolio__content__cards__item {
+        border-radius: 10px;
+        overflow: hidden;
+        height: 200px; /* Fixed height for each card */
+        position: relative; /* Needed for image hover effect */
+
+        .portfolio__content__cards__item__img-wrapper {
+          overflow: hidden;
+          border-radius: 10px;
+          height: 100%; /* Occupy full height of the card */
+
+          img {
+            width: 100%;
+            height: 100%; /* Ensure the image covers the wrapper */
+            object-fit: cover; /* Maintain aspect ratio */
+            display: block;
+            transition: transform 0.3s;
+
+            &:hover {
+              transform: scale(1.05);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Media Queries */
+@media only screen and (max-width: 600px) {
+  .portfolio__content__cards {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .portfolio__content__cards {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
