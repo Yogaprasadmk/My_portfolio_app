@@ -1,76 +1,114 @@
-.home
-{
-          position:relative;
-          height:100%;
-          display:flex;
-          justify-content:center;
-          align-content: center;
-          &_text_wrapper{
-                    display:flex;
-                    align-content: center;
-                    flex-direction: column;
-                    justify-content:center;
-                    h1{
-                              color:var(--yellow-theme-main-color);
-                              margin: 0px;
-                              font-weight:600;
-                              font-size: 4em;
-                              line-height: 1.3em;
-                              position: relative;
-                              bottom: 30px;
-                              overflow:hidden;
-                              white-space: nowrap;
-                              animation: typingEffectAnimation 2.9s steps(30,end);
-                    }
-                    
+.home {
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__text-wrapper {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      h1 {
+        color: var(--yellow-theme-main-color);
+        margin: 0;
+        font-weight: 400;
+        font-size: 8rem;
+        line-height: 10rem;
+        position: relative;
+        overflow: hidden;
+        font-family: "Inconsolata", Consolas, monospace;
+        animation: typing 2.5s steps(30, end), blink-caret 0.5s step-end infinite;
+        white-space: nowrap;
+      }
+     
+    }
+    
+    .contact-me{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+      margin-top: 10px;
+      &__buttons-wrapper{
+        display: flex;
+        gap: 10px;
+        button, a {
+          cursor: pointer;
+          padding: 10px 70px;
+          font-size: 2rem;
+          background: transparent;
+          color: var(--yellow-theme-main-color);
+          border: 1.5px solid var(--yellow-theme-main-color);
+          border-radius: 4px;
+          font-weight: 500;
+          &:hover {
+            color: #000000;
+            background: var(--yellow-theme-main-color);
+            font-weight: 500;
           }
-          &_contactme{
-                    position: relative;
-                    left:-350%;
-                    margin-top: 320px;
-                    button{
-                              padding: 10px 20px;
-                              font-size: 1.4rem;
-                              background: transparent;
-                              color:var(--yellow-theme-main-color);
-                              border: 1px solid var(--yellow-theme-main-color);
-                              font-weight:500;         
-                    &:hover{
-                              background: var(--yellow-theme-main-color);
-                              color: #000000;
-                    }
-                    
-                    }
-          }
-}
-
-@media only screen and (max-width:550px)  {
-          .home_text_wrapper h1{
-                    font-size: 2rem;
-                    line-height: 3rem;
-                    margin-left: 80px;          
-          }
-}
-
-@media only screen and (max-width:551px) and (min-width: 768px)  {
-          .home_text_wrapper h1{
-                    font-size: 4rem;
-                    line-height: 5rem;                    
-          }
-}
-
-@media only screen and (max-width:769px) and (min-width:990px)  {
-          .home_text_wrapper h1{
-                    font-size: 6rem;
-                    line-height: 7rem;
-          }
-}
-
-@keyframes typingEffectAnimation {
-                    from{
-                              width: 0;
-                    }
-                    to{
-                              width: 100%;
-                    }
-}
+        }
+  
+        a{
+          padding: 10px 30px;
+          text-decoration: none;
+        }
+      }
+      &__socials-wrapper{
+        display: flex;
+        gap: 10px;
+        svg{
+          color: var(--yellow-theme-main-color);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  
+  @media only screen and (max-width: 550px) {
+    .home__text-wrapper > h1 {
+      font-size: 3rem;
+      line-height: 5rem;
+    }
+    .contact-me{
+      flex-direction: column;
+      &__buttons-wrapper{
+        flex-direction: column;
+      }
+    }
+  }
+  
+  @media only screen and (min-width: 551px) and (max-width: 768px) {
+    .home__text-wrapper > h1 {
+      font-size: 4rem;
+      line-height: 6rem;
+    }
+  }
+  
+  @media only screen and (min-width: 769px) and (max-width: 990px) {
+    .home__text-wrapper > h1 {
+      font-size: 6rem;
+      line-height: 8rem;
+    }
+  }
+  
+  /* The typing effect */
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from,
+    to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: orange;
+    }
+  }
+  
