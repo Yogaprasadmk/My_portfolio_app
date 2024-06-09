@@ -1,96 +1,113 @@
-import React from 'react';
+import React from "react";
+import { FaDev, FaDatabase } from "react-icons/fa";
+import { DiAndroid, DiApple } from "react-icons/di";
 import { BsInfoCircleFill } from "react-icons/bs";
-import PageHeaderContent from '../../Component/Pageheader';
-import {Animate} from "react-simple-animate";
-import './style.scss';
-import {DiApple, DiAndroid} from 'react-icons/di'
-import {FaDev, FaDatabase} from 'react-icons/fa';
+import PageHeaderContent from "../../Component/Pageheader";
+import { Animate } from "react-simple-animate";
+import "./style.scss";
 
-// personal details
-const personaldetails = [{
-  label: "Name: ",
-  value: "Yogaprasad"
-},{
-  label:  "Age: ",
-  value:  "20 Years"
-},{
-  label:  "Address: ",
-  value:  "Kumbakonam,Tamil Nadu,India"
-},{
-  label:  "Email: ",
-  value:   "yogaprasadmk@gmail.com"
-}
-]
+const personalDetails = [
+  {
+    label: "Name:",
+    value: "Yogaprasad M K",
+  },
+  {
+    label: "Age:",
+    value: "21",
+  },
+  {
+    label: "Address:",
+    value: "Kumbakonam,Tamil Nadu,India",
+  },
+  {
+    label: "Email:",
+    value: "yogaprasadmk@gmail.com",
+  },
+];
 
-const jobsummary = 'Self-Taught Programmer & Web developer looking for job opportunities to work and collabrate with teams to work on real world projects.I am independent with 0 years of experience in blending the art of design with skill of programming to deliver an immersive and engaging user experience through efficient website developement,proactive feature optimization, and relentless debugging.Passionate about UI design.It is imperative that you provide thorough and professional approach to my  resume.I am to become a front-end developer or a Full-Stack (MERN) Developer you will be judged by your ability to UX and UI Concepts and follow design guidelines.It is about expressing to your attention to detail and hope you can implement design for your future employer. '
-
-const About = () => {
+function About() {
   return (
-    <section id="about" className="about">
+    <section className="about" id="about">
       <PageHeaderContent
-        headerText = "About Me"
+        headerText="About Me"
         icon={<BsInfoCircleFill size={40} />}
       />
-      <div className="about__content" id="aboutcontent">
-      
-      <div className="about__content_personalwrapper">
-      <Animate
-        play
-        duration={1.3}
-        delay={0.7}
-        start={{ transform: "translateX(-900px)" }}
-        end={{ transform: "translateX(0px)" }}
-      >
-        <h3>Self-Taught Web Developer & Programmer </h3>
-        <p>{jobsummary}</p>
-       </Animate>
-       <Animate
-        play
-        duration={1.3}
-        delay={0.7}
-        start={{ transform: "translateX(500px)" }}
-        end={{ transform: "translateX(0px)" }}
-      >
-       <h3 className="personalinformationheadertext">Personal Information</h3>
-        <ul>
-            {
-              personaldetails.map((item,i)=>(
-                  <li key={i}>
-                    <span className="title">{item.label}</span>
-                    <span className="value">{item.value}</span>
-                  </li>
-              ))
-
-            }
-          </ul>
-        </Animate>
-      </div>
-        <div className="about__content_servicewrapper">
-        <Animate
-        play
-        duration={1.5}
-        delay={1}
-        start={{ transform: "translateX(600px)" }}
-        end={{ transform: "translatex(0px)" }}
-      >
-      <div className="about__content_servicewrapper__innerContent">
-            <div>
-              <FaDev size={60} color= "var(--yellow-theme-main-color)"/>
+      <div className="about__content">
+        <div className="about__content__personalWrapper">
+          <Animate
+            play
+            duration={1}
+            delay={0}
+            start={{
+              transform: "translateX(-900px)",
+            }}
+            end={{ transform: "translateX(0px)" }}
+          >
+            <h3 className="developerContent">Final Year CSE Student</h3>
+            <p>
+            I'm a final year Computer Science and Engineering student at Muthayammal Engineering College. 
+            With a strong foundation in algorithms, data structures, and various programming languages including 
+            Java, Python, and JavaScript, I've delved into web development using HTML, CSS, React.js, and Node.js. 
+            Additionally, I've explored machine learning with TensorFlow and gained familiarity with cloud computing platforms 
+            like AWS. I've contributed to projects developing front-end web applications and interned at Codsoft, deploying 
+            web-based solutions. Beyond academics, I actively participate in college symposiums and coding competitions, leveraging 
+            my skills to solve real-world problems. Looking ahead, I'm eager to pursue further education in cloud computing and machine learning, 
+            aspiring to make impactful contributions to the tech industry. Outside of studies, I enjoy exploring new technologies, 
+            watching movies, and playing outdoor and indoor games.
+            </p>
+          </Animate>
+          <Animate
+            play
+            duration={1}
+            delay={0}
+            start={{
+              transform: "translateX(500px)",
+            }}
+            end={{ transform: "translateX(0px)" }}
+          >
+            <h3 className="personalContent">Personal Information</h3>
+            <ul>
+              {personalDetails.map((item) => (
+                <li key={item.label}>
+                  <span className="title">{item.label}</span>
+                  <span className="value">{item.value}</span>
+                </li>
+              ))}
+            </ul>
+          </Animate>
+        </div>
+        <div className="about__content__servicesWrapper">
+          <Animate
+            play
+            duration={1}
+            delay={0}
+            start={{
+              transform: "translateX(500px)",
+            }}
+            end={{ transform: "translateX(0px)" }}
+          >
+            <div className="about__content__servicesWrapper__innerContent">
+              <div>
+                <DiApple color="var(--yellow-theme-main-color)" size={60} />
+                {/* <p className="service-text">Web Design</p> */}
+              </div>
+              <div>
+                <FaDev color="var(--yellow-theme-main-color)" size={60} />
+                {/* <p className="service-text">Web Development</p> */}
+              </div>
+              <div>
+                <FaDatabase color="var(--yellow-theme-main-color)" size={60} />
+                {/* <p className="service-text">Databases</p> */}
+              </div>
+              <div>
+                <DiAndroid color="var(--yellow-theme-main-color)" size={60} />
+                {/* <p className="service-text">Android Developement</p> */}
+              </div>
             </div>
-            <div>
-              <DiAndroid size={60} color= "var(--yellow-theme-main-color)"/>
-            </div>
-            <div>
-              <FaDatabase size={60} color= "var(--yellow-theme-main-color)"/>
-            </div>
-            <div>
-              <DiApple size={60} color= "var(--yellow-theme-main-color)"/>
-            </div>
-          </div>
-      </Animate>
+          </Animate>
         </div>
       </div>
     </section>
-  )
+  );
 }
 export default About;
