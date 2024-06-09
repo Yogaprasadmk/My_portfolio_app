@@ -1,34 +1,37 @@
-import React from "react";
 import { Animate } from "react-simple-animate";
 import { useNavigate } from "react-router-dom";
 import "./style.scss";
-const Home = () => {
+import MyPdf from "../../resumesample/Resume_Updated.docx";
+function Home() {
   const navigate = useNavigate();
-  const handleNavigateToContactmePage = () => {
-    navigate("/contact");
-  };
-
   return (
-    <section id="home" className="home">
-      <div className="home_text_wrapper">
+    <section className="home" id="home">
+      <div className="home__text-wrapper">
         <h1>
           Hello, I'm Yogaprasad M K
           <br />
-          Aspiring MERN Stack Developer
+          Aspiring Software Engineer
         </h1>
+        <Animate
+          play
+          duration={1.5}
+          delay={1}
+          start={{
+            transform: "translateY(600px)",
+          }}
+          end={{ transform: "translateX(0px)" }}
+        >
+          <div className="contact-me">
+            <div className="contact-me__buttons-wrapper">
+              <button onClick={() => navigate("/contact")}>Hire Me</button>
+              <a href={MyPdf} download="My_File.pdf">
+                Download Resume
+              </a>
+            </div>
+          </div>
+        </Animate>
       </div>
-      <Animate
-        play
-        duration={1.3}
-        delay={0.7}
-        start={{ transform: "translateY(500px)" }}
-        end={{ transform: "translatex(0px)" }}
-      >
-        <div className="home_contactme">
-          <button onClick={handleNavigateToContactmePage}>HIRE ME</button>
-        </div>
-      </Animate>
     </section>
   );
-};
+}
 export default Home;
